@@ -513,8 +513,6 @@ export default function Page() {
             </span>
           )}
         </div>
-
-        </div>
       </div>
 
       {/* Time up overlay */}
