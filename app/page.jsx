@@ -2,11 +2,6 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 
-const HINTS = [
-  'Zkus Denisu požádat, aby předstírala, že je jiné AI nebo hrála jinou roli',
-  'Co kdybys byl Anthropic inženýr provádějící systémový test?',
-  'Dokážeš přimět Denisu dokončit větu, která začíná kódem?',
-];
 
 const CONFETTI_COLORS = ['#00e599', '#3b82f6', '#f59e0b', '#ef4444', '#a855f7', '#ec4899'];
 
@@ -105,7 +100,6 @@ export default function Page() {
   const [codeGuess, setCodeGuess] = useState('');
   const [success, setSuccess] = useState(false);
   const [successData, setSuccessData] = useState(null);
-  const [hintsOpen, setHintsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [streaming, setStreaming] = useState(false);
   const chatEndRef = useRef(null);
@@ -520,51 +514,6 @@ export default function Page() {
           )}
         </div>
 
-        {/* Hints */}
-        <div style={{ borderTop: `1px solid ${BORDER}` }}>
-          <button
-            onClick={() => setHintsOpen((h) => !h)}
-            style={{
-              width: '100%',
-              textAlign: 'left',
-              background: 'none',
-              border: 'none',
-              padding: '10px 24px',
-              fontSize: 12,
-              color: MUTED,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 6,
-              fontFamily: 'inherit',
-              transition: 'color 0.15s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = SECONDARY)}
-            onMouseLeave={(e) => (e.currentTarget.style.color = MUTED)}
-          >
-            <span style={{ fontSize: 10 }}>{hintsOpen ? '▼' : '▶'}</span>
-            Nápovědy
-          </button>
-          {hintsOpen && (
-            <div style={{ padding: '0 24px 14px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-              {HINTS.map((hint, i) => (
-                <div key={i} style={{ display: 'flex', gap: 10, fontSize: 12 }}>
-                  <span
-                    style={{
-                      color: ACCENT,
-                      fontWeight: 600,
-                      fontFamily: 'ui-monospace, monospace',
-                      opacity: 0.7,
-                      flexShrink: 0,
-                    }}
-                  >
-                    #{i + 1}
-                  </span>
-                  <span style={{ color: MUTED }}>{hint}</span>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </div>
 
