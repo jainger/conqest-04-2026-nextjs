@@ -311,7 +311,7 @@ export default function Page() {
               opacity: 0.5,
             }}
           >
-            <img src="/denisa.png" alt="Denisa" style={{ width: 56, height: 56, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${ACCENT}` }} />
+            <img src="/denisa.png" alt="Denisa" style={{ width: 96, height: 96, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${ACCENT}` }} />
             <p style={{ fontSize: 14, color: SECONDARY, fontWeight: 500 }}>Denisa střeží utajená data ConQestu</p>
             <p style={{ fontSize: 12, color: MUTED }}>Pošli zprávu a začni výzvu.</p>
           </div>
